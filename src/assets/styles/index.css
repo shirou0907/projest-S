@@ -1,0 +1,78 @@
+/* Custom Element Plus */
+.el-main {
+  --el-header-height: 60px;
+  overflow-y: hidden;
+  height: calc(100vh - var(--el-header-height));
+}
+
+.el-dialog__header {
+  font-weight: 600;
+}
+
+.page-order .el-radio {
+  margin-right: 16px;
+}
+
+.page-order .el-radio.el-radio--large {
+  height: 72px;
+  width: 324px;
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.el-step__head {
+  margin-bottom: 6px;
+}
+
+@keyframes fillColor {
+  from {
+    background-color: var(--el-fill-color);
+  }
+  to {
+    background-color: var(--el-color-primary);
+  }
+}
+
+.main-user:hover {
+  animation: fillColor 1s ease-in-out infinite alternate;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: var(--el-color-primary);
+}
+
+.swiper-slide-thumb-active img {
+  border: 1px solid saddlebrown;
+}
+
+/* width */
+.product-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.share-dialog header {
+  display: none;
+}
+
+:root {
+  --el-color-primary-light-5: #f5f5f5;
+  --el-color-primary-dark-2: #f5f5f5;
+  --el-color-white: #f5f5f5;
+  --el-color-primary-light-5: #f5f5f5;
+  --el-color-primary-light-3: #f5f5f5;
+  --el-color-primary-light-3: #f5f5f5;
+  --el-color-primary-dark-2: #f5f5f5;
+  --el-color-primary-dark-2: #f5f5f5;
+  --el-color-white: #f5f5f5;
+  --el-color-primary-light-5: #f5f5f5;
+  --el-color-primary-light-5: #f5f5f5;
+}
