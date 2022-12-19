@@ -2,7 +2,7 @@
   <el-header class="bg-primary">
     <div class="h-full flex justify-between items-center">
       <router-link to="/" class="h-10">
-        <full-logo class="text-white"></full-logo>
+        <full-logo></full-logo>
       </router-link>
 
       <div class="flex items-center space-x-4 text-white">
@@ -28,8 +28,6 @@
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item command="setup">Cài đặt hồ sơ</el-dropdown-item>
-              <el-dropdown-item command="changePassword">Đổi mật khẩu</el-dropdown-item>
               <el-dropdown-item command="logout">Đăng xuất</el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -40,7 +38,7 @@
 </template>
 
 <script lang="ts" setup>
-import FullLogo from '@/assets/logo.svg'
+import FullLogo from '@/assets/logo-light.svg'
 import { useUserStore } from '@/store/user'
 
 const store = useUserStore()

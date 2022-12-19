@@ -2,7 +2,7 @@
   <el-aside class="rounded bg-white" width="224px">
     <el-scrollbar :view-class="'h-full'" :wrap-class="'h-full'">
       <el-menu :default-active="defaultActive" class="flex flex-col h-full py-3" @select="handleSelect">
-        <el-menu-item index="home">
+        <el-menu-item index="home-admin">
           <el-icon>
             <i-ep-house></i-ep-house>
           </el-icon>

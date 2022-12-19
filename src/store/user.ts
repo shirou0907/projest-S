@@ -96,7 +96,7 @@ export const useUserStore = defineStore('customer', () => {
         Cookies.set('token', result.data.token)
         localStorageToken.value = result.data.token
         localStorageRole.value = 1
-        window.location.href = '/admin'
+        window.location.href = '/admin/home'
       }
     } catch (error: any) {
       ElNotification({

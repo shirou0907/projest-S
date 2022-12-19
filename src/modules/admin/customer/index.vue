@@ -30,7 +30,7 @@
 
         <el-table-column label="Role" width="146px">
           <template #default="{ row }">
-            <el-tag :type="getCustomerAttribute(row.role).color">
+            <el-tag :type="getCustomerAttribute(row.role).color as any">
               <div>
                 {{ getCustomerAttribute(row.role).label }}
               </div>

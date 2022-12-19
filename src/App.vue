@@ -24,7 +24,9 @@ nextTick(async () => {
 })
 
 store.checkUser()
-store.getCartCount()
+if (token) {
+  store.getCartCount()
+}
 
 router.beforeEach(async (to, from, next) => {
   if (to.meta.admin) {
