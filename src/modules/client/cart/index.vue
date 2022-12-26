@@ -45,29 +45,55 @@
 
             <button-main :disabled="!(shipmentSelected.length > 0)" @click="open">Xác nhận</button-main>
 
-            <el-dialog v-model="visible" title="Chi tiết đơn hàng" width="30%" :before-close="close">
-              <div>
-                <div>
-                  <div>Ngày đặt hàng: {{ new Date().toLocaleDateString() }}</div>
-                </div>
-                <div>
-                  <div>Người nhận:</div>
-                  <div>{{ shipmentValue?.userName }}</div>
-                  <div>{{ shipmentValue?.userPhone }}</div>
-                </div>
-                <div>
-                  <div>Địa chỉ</div>
+            <el-dialog v-model="visible" title="Chi tiết đơn hàng" width="50%" :before-close="close">
+              <div class="space-y-4">
+                <div class="bg-slate-100 flex justify-between shadow-md rounded-md p-3">
                   <div>
-                    {{ shipmentValue?.address }} {{ shipmentValue?.wardName }}, {{ shipmentValue?.districtName }},
-                    {{ shipmentValue?.provinceName }}
+                    <div>
+                      <div class="font-bold text-base">Người nhận:</div>
+                      <div>{{ shipmentValue?.userName }}</div>
+                      <div>{{ shipmentValue?.userPhone }}</div>
+                      <div>
+                        {{ shipmentValue?.address }} {{ shipmentValue?.wardName }}, {{ shipmentValue?.districtName }},
+                        {{ shipmentValue?.provinceName }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex gap-1">
+                    <div class="font-bold text-base">Ngày đặt hàng:</div>
+                    <div>{{ new Date().toLocaleDateString() }}</div>
                   </div>
                 </div>
-                <div>
-                  <div>Phương thức thanh toán</div>
-                  <div>Thanh toán khi nhận hàng</div>
+                <div class="bg-slate-100 rounded-md shadow-md p-3">
+                  <div class="text-base font-bold">Phương thức thanh toán</div>
+                  <div class="flex flex-col justify-between px-3">
+                    <div class="flex gap-3 items-center italic h-10 cursor-pointer">
+                      <input type="radio" checked />
+                      <img class="h-full object-cover" src="/img/cod.png" alt="" />
+                      <div>Thanh toán khi nhận hàng</div>
+                    </div>
+
+                    <div class="flex gap-3 items-center italic h-10 cursor-not-allowed">
+                      <input type="radio" disabled />
+                      <img class="h-full object-cover" src="/img/visa.png" alt="" />
+                      <div>Thanh toán bằng thẻ tín dụng</div>
+                    </div>
+
+                    <div class="flex gap-3 items-center italic h-10 cursor-not-allowed">
+                      <input type="radio" disabled />
+                      <img class="h-full object-cover" src="/img/pp.png" alt="" />
+                      <div>Thanh toán qua ví PayPal</div>
+                    </div>
+
+                    <div class="flex gap-3 items-center italic h-10 cursor-not-allowed">
+                      <input type="radio" disabled />
+                      <img class="h-full object-cover" src="/img/mc.png" alt="" />
+                      <div>Thanh toán bằng thẻ MasterCard</div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div>Đơn hàng</div>
+                <div class="!bg-slate-100 p-3 shadow-md rounded-md">
+                  <div class="text-base font-bold mb-3">Đơn hàng</div>
                   <div>
                     <div v-for="(product, index) in cart.products" :key="index">
                       <div class="flex justify-between">
@@ -76,10 +102,11 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div>
-                  <div>Tổng tiền</div>
-                  <div>{{ formatCurrency(cart.total) }} VND</div>
+                  <div class="border-t my-3"></div>
+                  <div class="font-semibold text-right">
+                    <div>Tổng tiền</div>
+                    <div>{{ formatCurrency(cart.total) }} VND</div>
+                  </div>
                 </div>
               </div>
               <template #footer>
@@ -256,6 +283,7 @@ const handleCheckout = async () => {
       total: cart.value.total,
       shipment: shipmentSelected.value,
     })
+    await userStore.getCartCount()
   } catch (e: any) {
     return ElNotification({
       title: 'Error',

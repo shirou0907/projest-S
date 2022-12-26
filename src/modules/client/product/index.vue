@@ -117,9 +117,12 @@
 
               <teleport to="#app">
                 <el-dialog v-model="visible" width="40%" class="share-dialog" :show-close="false" draggable>
+                  <div class="text-lg font-semibold mb-3 text-black">Hãy chia sẻ sản phẩm này với mọi người nha</div>
                   <div class="flex">
                     <qrcode-vue :value="shareURL" :size="300" level="H" />
-                    <div>Share</div>
+                    <div class="flex-1">
+                      <img src="/img/fashion.png" class="h-full" alt="" />
+                    </div>
                   </div>
                 </el-dialog>
               </teleport>
@@ -195,7 +198,6 @@ import { Buffer } from 'buffer'
 import { formatCurrency } from '@thinkvn/utils'
 import QrcodeVue from 'qrcode.vue'
 import { useVisible } from '@thinkvn/composables'
-import { useScroll } from '@/composables'
 
 const userStore = useUserStore()
 const route = useRoute()
@@ -214,8 +216,6 @@ const colorSelected = ref('')
 const sizeSelected = ref('')
 const seeMore = ref(false)
 const shareURL = computed(() => window.location.href)
-
-const { refScroll, handleScroll } = useScroll()
 
 const { data, fetch, isFetching } = useFetchData(() => getProductById(id.value), { autoResetData: false })
 const {
@@ -264,6 +264,18 @@ const handleAddComment = async () => {
     console.log(e)
   } finally {
     loadingComment.value = false
+  }
+}
+
+const refScroll = ref<HTMLElement>()
+
+const handleScroll = () => {
+  const offset = refScroll.value?.offsetTop
+  if (offset) {
+    window.scrollTo({
+      top: offset - 88,
+      behavior: 'smooth',
+    })
   }
 }
 </script>
