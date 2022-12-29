@@ -26,7 +26,8 @@
         <div class="flex items-center space-x-6">
           <el-color-picker v-model="state.lightMainColor" size="large" />
           <el-button type="primary">Mehub</el-button>
-          <el-tag type="primary">Mehub</el-tag>
+
+          <el-tag>Mehub</el-tag>
           <el-checkbox type="primary" :checked="true"></el-checkbox>
           <el-radio type="primay"></el-radio>
         </div>
@@ -44,7 +45,7 @@
           <div class="font-normal">1 2 3 4 5 6</div>
         </div>
 
-        <el-progress :percentage="100" status="primary" :indeterminate="true" :duration="5" />
+        <el-progress :percentage="100" :indeterminate="true" :duration="5" />
       </div>
     </div>
 

@@ -41,7 +41,7 @@ import { useUserStore } from '@/store/user'
 
 const userStore = useUserStore()
 
-const user = computed(() => userStore.customer)
+const user = computed(() => userStore.customer) as any
 </script>
 
 <route>
