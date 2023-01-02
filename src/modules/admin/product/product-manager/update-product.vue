@@ -1,14 +1,23 @@
 <template>
   <div v-loading="isFetching" class="min-h-[50vh] space-y-4">
-    <div v-if="state && state.name" class="text-2xl font-bold py-4">{{ state.name }}</div>
+    <el-button
+      v-if="state && state.name"
+      type="primary"
+      :loading="loading"
+      :disabled="!state.name.length"
+      class="float-right sticky top-0 z-[100]"
+      @click="updateProductBasic"
+    >
+      Save
+    </el-button>
+    <div v-if="state && state.name" class="text-2xl font-bold py-4 flex items-center justify-between">
+      <div>{{ state.name }}</div>
+    </div>
     <div v-else class="text-2xl font-bold py-4">Thêm mới sản phẩm</div>
 
     <div v-if="state" class="p-12 bg-white border !border-border-color rounded space-y-4">
       <div class="flex justify-between">
         <div class="text-lg font-semibold">Thông tin cơ bản</div>
-        <el-button type="primary" :loading="loading" :disabled="!state.name.length" @click="updateProductBasic">
-          Save
-        </el-button>
       </div>
 
       <div class="flex w-full space-x-[100px]">

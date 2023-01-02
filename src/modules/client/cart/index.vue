@@ -19,7 +19,7 @@
       </el-steps>
       <div v-if="cart" class="flex gap-4 mt-4">
         <div class="w-[300px] p-4 bg-white rounded-md shadow-lg">
-          <div>
+          <div v-if="shipments.length">
             <div class="text-2xl font-semibold mb-4">Địa chỉ giao hàng</div>
             <label
               v-for="(ship, index) in shipments"
@@ -116,14 +116,19 @@
               </template>
             </el-dialog>
           </div>
+          <div v-else class="flex flex-col justify-center items-center gap-3">
+            <div class="font-semibold">Chưa có địa chỉ thanh toán</div>
+            <img src="/img/shipment.png" alt="" />
+            <button-main @click="$router.push({ name: 'shipment' })">Thêm ngay</button-main>
+          </div>
         </div>
         <div class="flex-1 space-y-3">
           <div
             v-for="(product, index) in cart.products"
             :key="index"
-            class="px-5 py-2 bg-white rounded-md shadow-lg flex items-center justify-between"
+            class="p-5 bg-white rounded-md shadow-lg flex items-center justify-between"
           >
-            <img :src="getPhotoUrl(product.productId.mainImage)" class="w-[100px] h-[100px] rounded-md" alt="" />
+            <img :src="getPhotoUrl(product.productId.mainImage)" class="w-[80px] h-[80px] rounded-md" alt="" />
 
             <div>
               <div class="text-xs">Name</div>

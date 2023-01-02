@@ -97,7 +97,7 @@
           </div>
 
           <div
-            class="product-bar flex-1 sticky top-[96px] space-y-4 bg-white p-5 rounded-md shadow-lg h-[600px] overflow-auto"
+            class="product-bar flex-1 sticky top-[96px] space-y-4 bg-white p-5 rounded-md shadow-lg h-[700px] overflow-auto"
           >
             <div>
               <div class="flex justify-between items-center">

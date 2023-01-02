@@ -1,5 +1,5 @@
 <template>
-  <div class="product-gallery flex gap-7 w-full h-[600px]">
+  <div class="product-gallery flex gap-7 w-full h-[700px]">
     <div class="w-[20%]">
       <swiper
         direction="vertical"
@@ -19,7 +19,7 @@
     <div class="w-[80%] h-fit">
       <swiper :space-between="10" :zoom="true" :thumbs="{ swiper: thumbsSwiper }" :modules="modules">
         <swiper-slide v-for="(photo, index) in photos" :key="index" class="overflow-hidden">
-          <div class="image-slide relative w-full h-[560px]">
+          <div class="image-slide relative w-full h-[660px]">
             <img class="img-slide w-full h-full object-cover pointer-events-none" :src="getPhotoUrl(photo)" />
           </div>
         </swiper-slide>
@@ -83,10 +83,10 @@ nextTick(() => {
 
   transform: scale(var(--zoom, 1));
   transform-origin: var(--x) var(--y);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 .image-slide:hover {
-  --zoom: 1.8;
+  --zoom: 1.3;
   cursor: zoom-in;
 }
 </style>

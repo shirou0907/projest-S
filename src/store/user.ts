@@ -9,6 +9,7 @@ import {
   FacebookAuthProvider,
   updateProfile,
   signOut,
+  updatePassword,
 } from '@firebase/auth'
 import { auth } from '@/utils'
 import { ElNotification } from 'element-plus'
@@ -174,6 +175,19 @@ export const useUserStore = defineStore('customer', () => {
     }
   }
 
+  const handleChangePassword = async (password: string) => {
+    try {
+      const user = auth.currentUser
+      try {
+        if (user) await updatePassword(user, password)
+      } catch (error) {
+        console.log(error)
+      }
+    } catch (error) {
+      console.log('error', error)
+    }
+  }
+
   const logout = async () => {
     signOut(auth)
       .then(() => {
@@ -206,6 +220,7 @@ export const useUserStore = defineStore('customer', () => {
     loginWithFaceBook,
     loginWithEmail,
     loginWithEmailForAdmin,
+    handleChangePassword,
     logout,
   }
 })

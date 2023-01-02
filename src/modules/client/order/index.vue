@@ -83,8 +83,8 @@
       </div>
       <div v-else class="bg-white flex items-center justify-center rounded-md shadow-sm h-[600px]">
         <div class="w-1/2">
-          <img src="/img/empty-cart.png" />
-          <div class="text-center">Giỏ hàng của bạn chưa có sản phẩm nào, hãy mua ngay nhé!</div>
+          <img src="/img/empty-order.png" />
+          <div class="text-center mt-4">Bạn chưa có đơn hàng nào, hãy mua ngay nhé!</div>
         </div>
       </div>
     </div>
