@@ -52,6 +52,12 @@ export const useUserStore = defineStore('customer', () => {
           displayName: name,
           photoURL: 'https://img.icons8.com/wired/64/undefined/walter-white.png',
         })
+        ElNotification({
+          title: 'Success',
+          message: 'Đăng ký thành công',
+          type: 'success',
+        })
+        window.location.href = '/login'
       }
     } catch (error: any) {
       if (error.response) {

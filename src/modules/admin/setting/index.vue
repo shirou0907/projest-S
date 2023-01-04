@@ -25,9 +25,9 @@
         <div>Select another colors</div>
         <div class="flex items-center space-x-6">
           <el-color-picker v-model="state.lightMainColor" size="large" />
-          <el-button type="primary">Mehub</el-button>
+          <el-button type="primary">Tung Shop</el-button>
 
-          <el-tag>Mehub</el-tag>
+          <el-tag>Tung Shop</el-tag>
           <el-checkbox type="primary" :checked="true"></el-checkbox>
           <el-radio type="primay"></el-radio>
         </div>

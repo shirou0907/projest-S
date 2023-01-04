@@ -92,7 +92,7 @@ const { data, fetch, isFetching } = useFetchData(() => getAllCustomers({ ...stat
 
 const state = reactive({
   page: useRouteQuery('page', 1),
-  size: useRouteQuery('size', 2),
+  size: useRouteQuery('size', 6),
 })
 
 const getCustomerAttribute = (value: CUSTOMER_ROLE) => {

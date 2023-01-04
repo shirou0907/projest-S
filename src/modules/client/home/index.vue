@@ -104,7 +104,7 @@
               @click="gotoDetail(product)"
             >
               <div class="w-full p-3">
-                <div class="relative w-full h-[200px] rounded-md overflow-hidden">
+                <div class="relative w-full h-[200px] rounded-md overflow-hidden mb-3">
                   <div v-if="product.stock === 0" class="absolute inset-0 p-5">
                     <img src="/img/sold-out.png" class="w-full h-full" alt="" />
                   </div>
@@ -180,7 +180,7 @@ const state = reactive({
   size: useRouteQuery('size', 8),
   orderBy: useRouteQuery('orderBy', 'updatedAt'),
   sort: useRouteQuery('sort', 'desc'),
-  range: useRouteQuery<number[]>('range', [0, 1000000]),
+  range: useRouteQuery<number[]>('range', [0, 10000000]),
   p_color: useRouteQuery<string>('p_color', ''),
   p_size: useRouteQuery<string>('p_size', ''),
   tag: useRouteQuery<string>('tag', ''),

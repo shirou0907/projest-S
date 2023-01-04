@@ -17,7 +17,6 @@
           </template>
 
           <el-menu-item index="customer-admin">Quản lý người dùng</el-menu-item>
-          <el-menu-item index="supplier">Quản lý Suppliers</el-menu-item>
         </el-sub-menu>
 
         <el-sub-menu index="san-pham">
