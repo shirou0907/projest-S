@@ -10,3 +10,11 @@ useHead({
   title: 'Not Found',
 })
 </script>
+
+<route>
+  {
+    "meta": {
+      "layout": "empty"
+    }
+  }
+</route>

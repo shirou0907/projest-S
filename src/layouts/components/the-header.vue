@@ -1,7 +1,7 @@
 <template>
   <el-header class="bg-primary">
     <div class="h-full flex justify-between items-center">
-      <router-link to="/" class="h-10">
+      <router-link to="/admin" class="h-10">
         <full-logo></full-logo>
       </router-link>
 
