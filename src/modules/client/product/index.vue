@@ -145,7 +145,7 @@
             <div class="flex items-center space-x-3">
               <div v-for="(size, index) in product.options.sizes" :key="index">
                 <div
-                  class="p-2 border-2 w-10 text-center"
+                  class="p-2 border-2 w-fit text-center"
                   :class="{ 'border-primary': sizeSelected === size }"
                   @click="sizeSelected = size"
                 >
