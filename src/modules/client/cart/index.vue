@@ -12,13 +12,13 @@
         </div>
       </div>
       <div v-else>
-        <el-steps v-if="cart.products.length" :active="step" finish-status="success" align-center>
+        <el-steps v-if="cart && cart.products?.length" :active="step" finish-status="success" align-center>
           <el-step description="Chọn sản phẩm" />
           <el-step description="Chọn địa chỉ giao hàng" />
           <el-step description="Xem chi tiết đơn hàng" />
           <el-step description="Xác nhận đơn hàng" />
         </el-steps>
-        <div v-if="cart.products.length" class="flex gap-4 mt-4">
+        <div v-if="cart && cart.products?.length" class="flex gap-4 mt-4">
           <div class="w-[300px] p-4 bg-white rounded-md shadow-lg">
             <div v-if="shipments.length">
               <div class="text-2xl font-semibold mb-4">Địa chỉ giao hàng</div>
